@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Python temporary files
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Original and private audio
+/sounds/
+
+# Generated audio and logs
+/generated/
+/outputs/
+
+# Archived or removed audio
+/removed_audio_*/
+
+# Temporary Excel files
+~$*.xlsx
+
+# Embedding backups
+sound_embeddings_before_*.csv
+sound_embeddings_before_update_*.csv
+
+# Temporary files
+*.tmp
