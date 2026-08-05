@@ -2,10 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Listening Forward</title>
+  <meta name="description" content="Listening Forward — tune a possible sonic future.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Listening Forward</h1>
-  <p>Interactive listening instrument in development.</p>
+  <main class="page">
+    <section class="instrument" aria-label="Listening Forward instrument">
+      <img
+        class="instrument-image"
+        src="assets/radio-reference.png"
+        alt="Listening Forward retro radio-style listening instrument"
+      >
+<div class="body-copy">
+        <p>
+          This instrument recomposes environmental field recordings
+          through human interpretation and machine listening.
+        </p>
+        <p>
+          Move the dial slowly to tune between possible sonic futures.
+          Listen for sounds that emerge, recede, overlap and return.
+        </p>
+      </div>
+
+      <!-- Editable bottom-right system text overlays the wording baked into the image. -->
+      <div class="system-copy">
+        Human annotation and machine-derived acoustic similarity shape
+        how recordings enter, persist and recede.
+      </div>
+
+      <!-- Main tuning control -->
+      <div class="dial-zone">
+        <button
+          id="dial"
+          class="dial"
+          type="button"
+          aria-label="Tune between possible sonic futures"
+          aria-valuemin="0"
+          aria-valuemax="359"
+          aria-valuenow="28"
+        >
+          <span class="dial-face">
+            <span class="dial-marker"></span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Current position readout -->
+      <div id="orientationReadout" class="orientation-readout" aria-live="polite">
+        Repair 69% · Automation 31%
+      </div>
+
+      <!-- Rotary volume control in the same position as the physical concept -->
+      <div class="volume-zone">
+        <button
+          id="volumeKnob"
+          class="volume-knob"
+          type="button"
+          role="slider"
+          aria-label="Volume"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="72"
+          aria-valuetext="72 percent"
+          title="Drag the knob, use the mouse wheel, or press the arrow keys"
+        >
+          <span class="volume-face">
+            <span class="volume-marker"></span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Reserved visual-monitor area: intentionally inactive for now -->
+      <div class="monitor-zone" aria-hidden="true">
+        <div class="monitor-placeholder">
+          <span>active soundscape</span>
+          <div class="wave-placeholder"></div>
+        </div>
+      </div>
+    </section>
+
+    <p class="mobile-note">
+      Drag the central dial slowly. The audio system and right-side monitors will be connected in the next stage.
+    </p>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
