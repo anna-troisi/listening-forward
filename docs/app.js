@@ -4,7 +4,7 @@ const readout = document.getElementById("orientationReadout");
 const volumeKnob = document.getElementById("volumeKnob");
 const volumeFace = volumeKnob.querySelector(".volume-face");
 
-const orientations = ["Repair", "Automation", "Extraction", "Resilience"];
+const orientations = ["Repair", "Automation", "Habitation", "Biodiversity"];
 
 let angle = 28;
 let dragging = false;
@@ -69,6 +69,7 @@ function pointerAngle(event) {
 }
 
 dial.addEventListener("pointerdown", event => {
+  window.dispatchEvent(new CustomEvent("listeningforward:start"));
   dragging = true;
   dial.setPointerCapture(event.pointerId);
   updateDial(pointerAngle(event));
@@ -91,6 +92,7 @@ dial.addEventListener("pointercancel", () => {
 });
 
 dial.addEventListener("keydown", event => {
+  window.dispatchEvent(new CustomEvent("listeningforward:start"));
   const fineStep = event.shiftKey ? 1 : 4;
 
   if (event.key === "ArrowRight" || event.key === "ArrowUp") {

@@ -32,6 +32,17 @@
         how recordings enter, persist and recede.
       </div>
 
+      <!-- The working radio vocabulary: Repair, Automation, Habitation, Biodiversity. -->
+      <div class="orientation-copy biodiversity-copy">
+        <strong>BIODIVERSITY</strong>
+        <span>diversity,<br>interdependence,<br>living systems</span>
+      </div>
+
+      <div class="orientation-copy habitation-copy">
+        <strong>HABITATION</strong>
+        <span>dwelling,<br>activity,<br>coexistence</span>
+      </div>
+
       <!-- Main tuning control -->
       <div class="dial-zone">
         <button
@@ -53,9 +64,16 @@
       <div id="orientationReadout" class="orientation-readout" aria-live="polite">
         Repair 69% · Automation 31%
       </div>
+      <div id="audioStatus" class="audio-status" aria-live="polite">
+        preparing audio
+      </div>
 
       <!-- Rotary volume control in the same position as the physical concept -->
       <div class="volume-zone">
+        <div class="volume-scale" aria-hidden="true">
+          <span class="volume-min">MIN</span>
+          <span class="volume-max">MAX</span>
+        </div>
         <button
           id="volumeKnob"
           class="volume-knob"
@@ -84,10 +102,11 @@
     </section>
 
     <p class="mobile-note">
-      Drag the central dial slowly. The audio system and right-side monitors will be connected in the next stage.
+      Turn the central dial to begin. Move slowly and listen for sounds that enter, persist and recede.
     </p>
   </main>
 
+  <script src="audio-engine.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

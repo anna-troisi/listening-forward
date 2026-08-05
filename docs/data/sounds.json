@@ -1,0 +1,1694 @@
+{
+  "version": 1,
+  "sampleRate": 32000,
+  "orientations": [
+    "repair",
+    "automation",
+    "habitation",
+    "biodiversity"
+  ],
+  "soundCount": 26,
+  "sounds": [
+    {
+      "id": "207553__bone666138__ocean-ambience-costal-with-foghorn",
+      "label": "207553__bone666138__ocean-ambience-costal-with-foghorn",
+      "role": "texture",
+      "playbackCharacter": "continuous",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "foghorn",
+        "signals",
+        "waves"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 480,
+      "scores": {
+        "repair": 0.50811,
+        "automation": 0.158518,
+        "habitation": 0.181208,
+        "biodiversity": 0.398374
+      },
+      "files": [
+        {
+          "path": "audio/207553__bone666138__ocean-ambience-costal-with-foghorn--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "441696__auroch_media__braid-burn-waterfall",
+          "similarity": 0.984466
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.981824
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.975097
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.970887
+        },
+        {
+          "id": "799570__klankbeeld__seaport-ambience-vlissingen-netherlands-828-am-170515_1153_1154",
+          "similarity": 0.969647
+        },
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.96866
+        },
+        {
+          "id": "773670__sadiquecat__perpignan-outdoor-wind-2024-12-08",
+          "similarity": 0.968087
+        },
+        {
+          "id": "662964__solar01__flowing-water-birds",
+          "similarity": 0.967188
+        }
+      ]
+    },
+    {
+      "id": "275786__kwahmah_02__waves-on-beach",
+      "label": "275786__kwahmah_02__waves-on-beach",
+      "role": "texture",
+      "playbackCharacter": "continuous",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "birds",
+        "machines",
+        "voices",
+        "waves"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 300,
+      "scores": {
+        "repair": 0.413377,
+        "automation": 0.011163,
+        "habitation": 0.598993,
+        "biodiversity": 0.308943
+      },
+      "files": [
+        {
+          "path": "audio/275786__kwahmah_02__waves-on-beach--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "627784__poots__seaside-country-path-with-bird-song-and-walkers",
+          "similarity": 0.973587
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.97296
+        },
+        {
+          "id": "425878__soundholder__water-river-lyna-small-stream-with-splashes-stereom10",
+          "similarity": 0.968953
+        },
+        {
+          "id": "407503__1kaylin_dickson__electrical-sander-turning-on-and-off",
+          "similarity": 0.967815
+        },
+        {
+          "id": "613549__rifualk__city-street",
+          "similarity": 0.965593
+        },
+        {
+          "id": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+          "similarity": 0.959696
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.95906
+        },
+        {
+          "id": "245713__jaegrover__rain-in-sewer-drain",
+          "similarity": 0.958216
+        }
+      ]
+    },
+    {
+      "id": "425878__soundholder__water-river-lyna-small-stream-with-splashes-stereom10",
+      "label": "425878__soundholder__water-river-lyna-small-stream-with-splashes-stereom10",
+      "role": "texture",
+      "playbackCharacter": "continuous",
+      "category": "water",
+      "environment": "coastal",
+      "elements": [
+        "water"
+      ],
+      "humanPresence": "indirect",
+      "durationSeconds": 60,
+      "scores": {
+        "repair": 0.577006,
+        "automation": 0.064747,
+        "habitation": 0.151007,
+        "biodiversity": 0.544715
+      },
+      "files": [
+        {
+          "path": "audio/425878__soundholder__water-river-lyna-small-stream-with-splashes-stereom10--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "245713__jaegrover__rain-in-sewer-drain",
+          "similarity": 0.978556
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.969703
+        },
+        {
+          "id": "275786__kwahmah_02__waves-on-beach",
+          "similarity": 0.968953
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.967203
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.966559
+        },
+        {
+          "id": "627784__poots__seaside-country-path-with-bird-song-and-walkers",
+          "similarity": 0.966533
+        },
+        {
+          "id": "207553__bone666138__ocean-ambience-costal-with-foghorn",
+          "similarity": 0.965525
+        },
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.965114
+        }
+      ]
+    },
+    {
+      "id": "441696__auroch_media__braid-burn-waterfall",
+      "label": "441696__auroch_media__braid-burn-waterfall",
+      "role": "texture",
+      "playbackCharacter": "discrete_event",
+      "category": "water",
+      "environment": "coastal",
+      "elements": [
+        "water"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 7,
+      "scores": {
+        "repair": 1.0,
+        "automation": 0.052914,
+        "habitation": 0.094743,
+        "biodiversity": 0.537534
+      },
+      "files": [
+        {
+          "path": "audio/441696__auroch_media__braid-burn-waterfall--discrete.wav",
+          "variant": 0,
+          "duration": 7.23
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "207553__bone666138__ocean-ambience-costal-with-foghorn",
+          "similarity": 0.984466
+        },
+        {
+          "id": "245713__jaegrover__rain-in-sewer-drain",
+          "similarity": 0.976384
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.975718
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.972439
+        },
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.971561
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.969154
+        },
+        {
+          "id": "662964__solar01__flowing-water-birds",
+          "similarity": 0.96879
+        },
+        {
+          "id": "230526-122228-kids-swimming-at-a-distance",
+          "similarity": 0.966149
+        }
+      ]
+    },
+    {
+      "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+      "label": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+      "role": "texture",
+      "playbackCharacter": "continuous",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "birds",
+        "boat",
+        "engine",
+        "waves"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 240,
+      "scores": {
+        "repair": 0.473662,
+        "automation": 0.104934,
+        "habitation": 0.439597,
+        "biodiversity": 0.365854
+      },
+      "files": [
+        {
+          "path": "audio/506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "799570__klankbeeld__seaport-ambience-vlissingen-netherlands-828-am-170515_1153_1154",
+          "similarity": 0.989813
+        },
+        {
+          "id": "207553__bone666138__ocean-ambience-costal-with-foghorn",
+          "similarity": 0.981824
+        },
+        {
+          "id": "773670__sadiquecat__perpignan-outdoor-wind-2024-12-08",
+          "similarity": 0.977926
+        },
+        {
+          "id": "441696__auroch_media__braid-burn-waterfall",
+          "similarity": 0.975718
+        },
+        {
+          "id": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+          "similarity": 0.974978
+        },
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.974541
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.971685
+        },
+        {
+          "id": "662964__solar01__flowing-water-birds",
+          "similarity": 0.971375
+        }
+      ]
+    },
+    {
+      "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+      "label": "530271__hypo_mix__small-australian-birds-urban-creek",
+      "role": "texture",
+      "playbackCharacter": "continuous",
+      "category": "birds",
+      "environment": "coastal",
+      "elements": [
+        "birds"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 60,
+      "scores": {
+        "repair": 0.577006,
+        "automation": 0.064747,
+        "habitation": 0.067114,
+        "biodiversity": 0.951219
+      },
+      "files": [
+        {
+          "path": "audio/530271__hypo_mix__small-australian-birds-urban-creek--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.979662
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.978553
+        },
+        {
+          "id": "230526-122228-voices",
+          "similarity": 0.975214
+        },
+        {
+          "id": "230526-122228-helicopter",
+          "similarity": 0.97495
+        },
+        {
+          "id": "230526-122228-birds",
+          "similarity": 0.974414
+        },
+        {
+          "id": "230526-122228-kids-swimming-at-a-distance",
+          "similarity": 0.973984
+        },
+        {
+          "id": "230526-122228-kids-swimming",
+          "similarity": 0.973395
+        },
+        {
+          "id": "230526-125850-works-and-nature",
+          "similarity": 0.971573
+        }
+      ]
+    },
+    {
+      "id": "627784__poots__seaside-country-path-with-bird-song-and-walkers",
+      "label": "627784__poots__seaside-country-path-with-bird-song-and-walkers",
+      "role": "texture",
+      "playbackCharacter": "event_rich",
+      "category": "birds",
+      "environment": "coastal",
+      "elements": [
+        "birds",
+        "dogs",
+        "footsteps",
+        "machines",
+        "voices",
+        "water"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 420,
+      "scores": {
+        "repair": 0.628678,
+        "automation": 0.145122,
+        "habitation": 0.837248,
+        "biodiversity": 1.0
+      },
+      "files": [
+        {
+          "path": "audio/627784__poots__seaside-country-path-with-bird-song-and-walkers--event-1.wav",
+          "variant": 0,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/627784__poots__seaside-country-path-with-bird-song-and-walkers--event-2.wav",
+          "variant": 1,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/627784__poots__seaside-country-path-with-bird-song-and-walkers--event-3.wav",
+          "variant": 2,
+          "duration": 16.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "275786__kwahmah_02__waves-on-beach",
+          "similarity": 0.973587
+        },
+        {
+          "id": "613549__rifualk__city-street",
+          "similarity": 0.973397
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.973149
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.969566
+        },
+        {
+          "id": "425878__soundholder__water-river-lyna-small-stream-with-splashes-stereom10",
+          "similarity": 0.966533
+        },
+        {
+          "id": "245713__jaegrover__rain-in-sewer-drain",
+          "similarity": 0.965993
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.965983
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.965206
+        }
+      ]
+    },
+    {
+      "id": "662964__solar01__flowing-water-birds",
+      "label": "662964__solar01__flowing-water-birds",
+      "role": "accent",
+      "playbackCharacter": "discrete_event",
+      "category": "water",
+      "environment": "coastal",
+      "elements": [
+        "bird",
+        "water"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 10,
+      "scores": {
+        "repair": 0.965983,
+        "automation": 0.0,
+        "habitation": 0.048098,
+        "biodiversity": 0.50542
+      },
+      "files": [
+        {
+          "path": "audio/662964__solar01__flowing-water-birds--discrete.wav",
+          "variant": 0,
+          "duration": 10.041
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.974965
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.972654
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.971375
+        },
+        {
+          "id": "441696__auroch_media__braid-burn-waterfall",
+          "similarity": 0.96879
+        },
+        {
+          "id": "207553__bone666138__ocean-ambience-costal-with-foghorn",
+          "similarity": 0.967188
+        },
+        {
+          "id": "245713__jaegrover__rain-in-sewer-drain",
+          "similarity": 0.966697
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.965209
+        },
+        {
+          "id": "230526-122228-kids-swimming-at-a-distance",
+          "similarity": 0.964534
+        }
+      ]
+    },
+    {
+      "id": "799570__klankbeeld__seaport-ambience-vlissingen-netherlands-828-am-170515_1153_1154",
+      "label": "799570__klankbeeld__seaport-ambience-vlissingen-netherlands-828-am-170515_1153_1154",
+      "role": "texture",
+      "playbackCharacter": "continuous",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "machines",
+        "waves"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 120,
+      "scores": {
+        "repair": 0.585618,
+        "automation": 0.078142,
+        "habitation": 0.577181,
+        "biodiversity": 0.471545
+      },
+      "files": [
+        {
+          "path": "audio/799570__klankbeeld__seaport-ambience-vlissingen-netherlands-828-am-170515_1153_1154--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.989813
+        },
+        {
+          "id": "207553__bone666138__ocean-ambience-costal-with-foghorn",
+          "similarity": 0.969647
+        },
+        {
+          "id": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+          "similarity": 0.969356
+        },
+        {
+          "id": "773670__sadiquecat__perpignan-outdoor-wind-2024-12-08",
+          "similarity": 0.96766
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.961905
+        },
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.961658
+        },
+        {
+          "id": "441696__auroch_media__braid-burn-waterfall",
+          "similarity": 0.961353
+        },
+        {
+          "id": "662964__solar01__flowing-water-birds",
+          "similarity": 0.961167
+        }
+      ]
+    },
+    {
+      "id": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+      "label": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+      "role": "accent",
+      "playbackCharacter": "discrete_event",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "birds",
+        "water",
+        "wind"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 480,
+      "scores": {
+        "repair": 0.602842,
+        "automation": 0.104934,
+        "habitation": 0.0,
+        "biodiversity": 0.487805
+      },
+      "files": [
+        {
+          "path": "audio/815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5--discrete.wav",
+          "variant": 0,
+          "duration": 18.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "773670__sadiquecat__perpignan-outdoor-wind-2024-12-08",
+          "similarity": 0.987292
+        },
+        {
+          "id": "163609__leandrosntounis__wind-strong-through-rocks-1",
+          "similarity": 0.982389
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.979994
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.977559
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.974978
+        },
+        {
+          "id": "799570__klankbeeld__seaport-ambience-vlissingen-netherlands-828-am-170515_1153_1154",
+          "similarity": 0.969356
+        },
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.967412
+        },
+        {
+          "id": "407503__1kaylin_dickson__electrical-sander-turning-on-and-off",
+          "similarity": 0.96378
+        }
+      ]
+    },
+    {
+      "id": "163609__leandrosntounis__wind-strong-through-rocks-1",
+      "label": "163609__leandrosntounis__wind-strong-through-rocks-1.wav",
+      "role": "accent",
+      "playbackCharacter": "discrete_event",
+      "category": "wind",
+      "environment": "infrastructural",
+      "elements": [
+        "wind"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 300,
+      "scores": {
+        "repair": 0.340175,
+        "automation": 0.232195,
+        "habitation": 0.432886,
+        "biodiversity": 0.321138
+      },
+      "files": [
+        {
+          "path": "audio/163609__leandrosntounis__wind-strong-through-rocks-1--discrete.wav",
+          "variant": 0,
+          "duration": 18.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+          "similarity": 0.982389
+        },
+        {
+          "id": "773670__sadiquecat__perpignan-outdoor-wind-2024-12-08",
+          "similarity": 0.981295
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.960838
+        },
+        {
+          "id": "799570__klankbeeld__seaport-ambience-vlissingen-netherlands-828-am-170515_1153_1154",
+          "similarity": 0.960042
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.956942
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.955042
+        },
+        {
+          "id": "407503__1kaylin_dickson__electrical-sander-turning-on-and-off",
+          "similarity": 0.950866
+        },
+        {
+          "id": "275786__kwahmah_02__waves-on-beach",
+          "similarity": 0.949537
+        }
+      ]
+    },
+    {
+      "id": "388372__jamesgilsenan__machinesatwork",
+      "label": "388372__jamesgilsenan__machinesatwork",
+      "role": "accent",
+      "playbackCharacter": "discrete_event",
+      "category": "machines",
+      "environment": "infrastructural",
+      "elements": [
+        "machines",
+        "signals"
+      ],
+      "humanPresence": "indirect",
+      "durationSeconds": 30,
+      "scores": {
+        "repair": 0.0,
+        "automation": 0.975664,
+        "habitation": 0.318792,
+        "biodiversity": 0.0
+      },
+      "files": [
+        {
+          "path": "audio/388372__jamesgilsenan__machinesatwork--discrete.wav",
+          "variant": 0,
+          "duration": 18.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.981292
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.979662
+        },
+        {
+          "id": "207553__bone666138__ocean-ambience-costal-with-foghorn",
+          "similarity": 0.975097
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.974551
+        },
+        {
+          "id": "627784__poots__seaside-country-path-with-bird-song-and-walkers",
+          "similarity": 0.973149
+        },
+        {
+          "id": "662964__solar01__flowing-water-birds",
+          "similarity": 0.972654
+        },
+        {
+          "id": "441696__auroch_media__braid-burn-waterfall",
+          "similarity": 0.972439
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.972106
+        }
+      ]
+    },
+    {
+      "id": "407503__1kaylin_dickson__electrical-sander-turning-on-and-off",
+      "label": "407503__1kaylin_dickson__electrical-sander-turning-on-and-off",
+      "role": "foreground",
+      "playbackCharacter": "discrete_event",
+      "category": "machines",
+      "environment": "infrastructural",
+      "elements": [
+        "machines"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 19,
+      "scores": {
+        "repair": 0.015645,
+        "automation": 1.0,
+        "habitation": 0.394743,
+        "biodiversity": 0.01477
+      },
+      "files": [
+        {
+          "path": "audio/407503__1kaylin_dickson__electrical-sander-turning-on-and-off--discrete.wav",
+          "variant": 0,
+          "duration": 15.3
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.972506
+        },
+        {
+          "id": "275786__kwahmah_02__waves-on-beach",
+          "similarity": 0.967815
+        },
+        {
+          "id": "245713__jaegrover__rain-in-sewer-drain",
+          "similarity": 0.967643
+        },
+        {
+          "id": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+          "similarity": 0.96378
+        },
+        {
+          "id": "425878__soundholder__water-river-lyna-small-stream-with-splashes-stereom10",
+          "similarity": 0.962802
+        },
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.960613
+        },
+        {
+          "id": "627784__poots__seaside-country-path-with-bird-song-and-walkers",
+          "similarity": 0.960577
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.959052
+        }
+      ]
+    },
+    {
+      "id": "557197__mcmikai__urban-ambience-with-people-talking",
+      "label": "557197__mcmikai__urban-ambience-with-people-talking",
+      "role": "texture",
+      "playbackCharacter": "discrete_event",
+      "category": "wind",
+      "environment": "infrastructural",
+      "elements": [
+        "crowd",
+        "footsteps",
+        "voices",
+        "wind"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 22,
+      "scores": {
+        "repair": 0.334721,
+        "automation": 0.223711,
+        "habitation": 0.734004,
+        "biodiversity": 0.315989
+      },
+      "files": [
+        {
+          "path": "audio/557197__mcmikai__urban-ambience-with-people-talking--discrete.wav",
+          "variant": 0,
+          "duration": 18.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.987764
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.984487
+        },
+        {
+          "id": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+          "similarity": 0.979994
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.971685
+        },
+        {
+          "id": "245713__jaegrover__rain-in-sewer-drain",
+          "similarity": 0.968193
+        },
+        {
+          "id": "613549__rifualk__city-street",
+          "similarity": 0.967909
+        },
+        {
+          "id": "425878__soundholder__water-river-lyna-small-stream-with-splashes-stereom10",
+          "similarity": 0.967203
+        },
+        {
+          "id": "773670__sadiquecat__perpignan-outdoor-wind-2024-12-08",
+          "similarity": 0.964898
+        }
+      ]
+    },
+    {
+      "id": "245713__jaegrover__rain-in-sewer-drain",
+      "label": "245713__jaegrover__rain-in-sewer-drain",
+      "role": "texture",
+      "playbackCharacter": "continuous",
+      "category": "water",
+      "environment": "urban",
+      "elements": [
+        "water"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 1800,
+      "scores": {
+        "repair": 0.589924,
+        "automation": 0.419737,
+        "habitation": 0.278523,
+        "biodiversity": 0.556911
+      },
+      "files": [
+        {
+          "path": "audio/245713__jaegrover__rain-in-sewer-drain--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "425878__soundholder__water-river-lyna-small-stream-with-splashes-stereom10",
+          "similarity": 0.978556
+        },
+        {
+          "id": "441696__auroch_media__braid-burn-waterfall",
+          "similarity": 0.976384
+        },
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.976016
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.970981
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.968431
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.968193
+        },
+        {
+          "id": "407503__1kaylin_dickson__electrical-sander-turning-on-and-off",
+          "similarity": 0.967643
+        },
+        {
+          "id": "662964__solar01__flowing-water-birds",
+          "similarity": 0.966697
+        }
+      ]
+    },
+    {
+      "id": "613549__rifualk__city-street",
+      "label": "613549__rifualk__city-street.wav",
+      "role": "texture",
+      "playbackCharacter": "event_rich",
+      "category": "urban",
+      "environment": "urban",
+      "elements": [
+        "bell",
+        "car engine starting",
+        "cars",
+        "crawd",
+        "dogs barking",
+        "people",
+        "song",
+        "steps",
+        "street music",
+        "traffic",
+        "voices",
+        "wind"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 300,
+      "scores": {
+        "repair": 0.288503,
+        "automation": 0.419737,
+        "habitation": 0.874161,
+        "biodiversity": 0.272358
+      },
+      "files": [
+        {
+          "path": "audio/613549__rifualk__city-street--event-1.wav",
+          "variant": 0,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/613549__rifualk__city-street--event-2.wav",
+          "variant": 1,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/613549__rifualk__city-street--event-3.wav",
+          "variant": 2,
+          "duration": 16.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.974427
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.973658
+        },
+        {
+          "id": "627784__poots__seaside-country-path-with-bird-song-and-walkers",
+          "similarity": 0.973397
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.968849
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.967909
+        },
+        {
+          "id": "275786__kwahmah_02__waves-on-beach",
+          "similarity": 0.965593
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.964564
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.958747
+        }
+      ]
+    },
+    {
+      "id": "620819__theplax__hockley-sat-evening",
+      "label": "620819__theplax__hockley-sat-evening",
+      "role": "accent",
+      "playbackCharacter": "event_rich",
+      "category": "urban",
+      "environment": "urban",
+      "elements": [
+        "bells",
+        "people",
+        "voices"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 540,
+      "scores": {
+        "repair": 0.417683,
+        "automation": 0.419737,
+        "habitation": 0.946309,
+        "biodiversity": 0.394309
+      },
+      "files": [
+        {
+          "path": "audio/620819__theplax__hockley-sat-evening--event-1.wav",
+          "variant": 0,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/620819__theplax__hockley-sat-evening--event-2.wav",
+          "variant": 1,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/620819__theplax__hockley-sat-evening--event-3.wav",
+          "variant": 2,
+          "duration": 16.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.987764
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.98609
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.981292
+        },
+        {
+          "id": "245713__jaegrover__rain-in-sewer-drain",
+          "similarity": 0.976016
+        },
+        {
+          "id": "662964__solar01__flowing-water-birds",
+          "similarity": 0.974965
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.974541
+        },
+        {
+          "id": "613549__rifualk__city-street",
+          "similarity": 0.974427
+        },
+        {
+          "id": "441696__auroch_media__braid-burn-waterfall",
+          "similarity": 0.971561
+        }
+      ]
+    },
+    {
+      "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+      "label": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+      "role": "texture",
+      "playbackCharacter": "event_rich",
+      "category": "urban",
+      "environment": "urban",
+      "elements": [
+        "bells",
+        "crawd",
+        "people",
+        "song",
+        "songs",
+        "voices"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 1080,
+      "scores": {
+        "repair": 0.503804,
+        "automation": 0.553695,
+        "habitation": 1.0,
+        "biodiversity": 0.47561
+      },
+      "files": [
+        {
+          "path": "audio/716384__lastraindrop__urban-commercial-pedestrian-street-ambience--event-1.wav",
+          "variant": 0,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/716384__lastraindrop__urban-commercial-pedestrian-street-ambience--event-2.wav",
+          "variant": 1,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/716384__lastraindrop__urban-commercial-pedestrian-street-ambience--event-3.wav",
+          "variant": 2,
+          "duration": 16.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.98609
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.984487
+        },
+        {
+          "id": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+          "similarity": 0.977559
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.974551
+        },
+        {
+          "id": "613549__rifualk__city-street",
+          "similarity": 0.973658
+        },
+        {
+          "id": "275786__kwahmah_02__waves-on-beach",
+          "similarity": 0.97296
+        },
+        {
+          "id": "407503__1kaylin_dickson__electrical-sander-turning-on-and-off",
+          "similarity": 0.972506
+        },
+        {
+          "id": "245713__jaegrover__rain-in-sewer-drain",
+          "similarity": 0.970981
+        }
+      ]
+    },
+    {
+      "id": "773670__sadiquecat__perpignan-outdoor-wind-2024-12-08",
+      "label": "773670__sadiquecat__perpignan-outdoor-wind-2024-12-08.ogg",
+      "role": "texture",
+      "playbackCharacter": "event_rich",
+      "category": "wind",
+      "environment": "urban",
+      "elements": [
+        "wind"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 840,
+      "scores": {
+        "repair": 0.383235,
+        "automation": 0.299174,
+        "habitation": 0.231544,
+        "biodiversity": 0.361789
+      },
+      "files": [
+        {
+          "path": "audio/773670__sadiquecat__perpignan-outdoor-wind-2024-12-08--event-1.wav",
+          "variant": 0,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/773670__sadiquecat__perpignan-outdoor-wind-2024-12-08--event-2.wav",
+          "variant": 1,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/773670__sadiquecat__perpignan-outdoor-wind-2024-12-08--event-3.wav",
+          "variant": 2,
+          "duration": 16.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "815176__treytatum3__ambsubn-summer_coastal-island-residential-street-birdsong-yard-work-traffic-wind-730am_qcf_gulf-shores-alabama_zoom-f3-with-rode-m5",
+          "similarity": 0.987292
+        },
+        {
+          "id": "163609__leandrosntounis__wind-strong-through-rocks-1",
+          "similarity": 0.981295
+        },
+        {
+          "id": "506155__klankbeeld__seaport-vlissingen-02-nl-190604_0013",
+          "similarity": 0.977926
+        },
+        {
+          "id": "716384__lastraindrop__urban-commercial-pedestrian-street-ambience",
+          "similarity": 0.969507
+        },
+        {
+          "id": "207553__bone666138__ocean-ambience-costal-with-foghorn",
+          "similarity": 0.968087
+        },
+        {
+          "id": "799570__klankbeeld__seaport-ambience-vlissingen-netherlands-828-am-170515_1153_1154",
+          "similarity": 0.96766
+        },
+        {
+          "id": "557197__mcmikai__urban-ambience-with-people-talking",
+          "similarity": 0.964898
+        },
+        {
+          "id": "275786__kwahmah_02__waves-on-beach",
+          "similarity": 0.956129
+        }
+      ]
+    },
+    {
+      "id": "230526-122228-birds",
+      "label": "230526-122228-birds.wav",
+      "role": "texture",
+      "playbackCharacter": "continuous",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "birds",
+        "water"
+      ],
+      "humanPresence": "indirect",
+      "durationSeconds": 156,
+      "scores": {
+        "repair": 0.590785,
+        "automation": 0.08618,
+        "habitation": 0.128188,
+        "biodiversity": 0.882927
+      },
+      "files": [
+        {
+          "path": "audio/230526-122228-birds--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "230526-122228-voices",
+          "similarity": 0.995652
+        },
+        {
+          "id": "230526-122228-kids-swimming-at-a-distance",
+          "similarity": 0.99481
+        },
+        {
+          "id": "230526-122228-helicopter",
+          "similarity": 0.994714
+        },
+        {
+          "id": "230526-122228-kids-swimming",
+          "similarity": 0.993028
+        },
+        {
+          "id": "230526-125850-works-and-nature",
+          "similarity": 0.99229
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.988019
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.974414
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.960489
+        }
+      ]
+    },
+    {
+      "id": "230526-122228-helicopter",
+      "label": "230526-122228-helicopter.wav",
+      "role": "texture",
+      "playbackCharacter": "discrete_event",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "birds",
+        "helicopter",
+        "water"
+      ],
+      "humanPresence": "indirect",
+      "durationSeconds": 20,
+      "scores": {
+        "repair": 0.571265,
+        "automation": 0.055816,
+        "habitation": 0.658277,
+        "biodiversity": 0.457995
+      },
+      "files": [
+        {
+          "path": "audio/230526-122228-helicopter--discrete.wav",
+          "variant": 0,
+          "duration": 18.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "230526-122228-kids-swimming-at-a-distance",
+          "similarity": 0.996185
+        },
+        {
+          "id": "230526-122228-birds",
+          "similarity": 0.994714
+        },
+        {
+          "id": "230526-122228-voices",
+          "similarity": 0.994203
+        },
+        {
+          "id": "230526-122228-kids-swimming",
+          "similarity": 0.991303
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.989923
+        },
+        {
+          "id": "230526-125850-works-and-nature",
+          "similarity": 0.986555
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.97495
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.96679
+        }
+      ]
+    },
+    {
+      "id": "230526-122228-kids-swimming-at-a-distance",
+      "label": "230526-122228-kids-swimming-at-a-distance.wav",
+      "role": "accent",
+      "playbackCharacter": "continuous",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "people",
+        "water"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 92,
+      "scores": {
+        "repair": 0.41797,
+        "automation": 0.018308,
+        "habitation": 0.703244,
+        "biodiversity": 0.313279
+      },
+      "files": [
+        {
+          "path": "audio/230526-122228-kids-swimming-at-a-distance--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "230526-122228-helicopter",
+          "similarity": 0.996185
+        },
+        {
+          "id": "230526-122228-birds",
+          "similarity": 0.99481
+        },
+        {
+          "id": "230526-122228-voices",
+          "similarity": 0.994446
+        },
+        {
+          "id": "230526-122228-kids-swimming",
+          "similarity": 0.992841
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.990444
+        },
+        {
+          "id": "230526-125850-works-and-nature",
+          "similarity": 0.983293
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.973984
+        },
+        {
+          "id": "441696__auroch_media__braid-burn-waterfall",
+          "similarity": 0.966149
+        }
+      ]
+    },
+    {
+      "id": "230526-122228-kids-swimming",
+      "label": "230526-122228-kids-swimming.wav",
+      "role": "texture",
+      "playbackCharacter": "event_rich",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "people",
+        "water"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 24,
+      "scores": {
+        "repair": 0.442658,
+        "automation": 0.056709,
+        "habitation": 0.608389,
+        "biodiversity": 0.336585
+      },
+      "files": [
+        {
+          "path": "audio/230526-122228-kids-swimming--event-1.wav",
+          "variant": 0,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/230526-122228-kids-swimming--event-2.wav",
+          "variant": 1,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/230526-122228-kids-swimming--event-3.wav",
+          "variant": 2,
+          "duration": 16.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "230526-122228-voices",
+          "similarity": 0.995346
+        },
+        {
+          "id": "230526-122228-birds",
+          "similarity": 0.993028
+        },
+        {
+          "id": "230526-122228-kids-swimming-at-a-distance",
+          "similarity": 0.992841
+        },
+        {
+          "id": "230526-122228-helicopter",
+          "similarity": 0.991303
+        },
+        {
+          "id": "230526-125850-works-and-nature",
+          "similarity": 0.9862
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.983366
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.973395
+        },
+        {
+          "id": "620819__theplax__hockley-sat-evening",
+          "similarity": 0.962427
+        }
+      ]
+    },
+    {
+      "id": "230526-122228-monkeys",
+      "label": "230526-122228-monkeys.wav",
+      "role": "accent",
+      "playbackCharacter": "discrete_event",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "monkeys",
+        "water"
+      ],
+      "humanPresence": "none",
+      "durationSeconds": 20,
+      "scores": {
+        "repair": 0.407636,
+        "automation": 0.002233,
+        "habitation": 0.116331,
+        "biodiversity": 0.710027
+      },
+      "files": [
+        {
+          "path": "audio/230526-122228-monkeys--discrete.wav",
+          "variant": 0,
+          "duration": 18.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "230526-122228-kids-swimming-at-a-distance",
+          "similarity": 0.990444
+        },
+        {
+          "id": "230526-122228-helicopter",
+          "similarity": 0.989923
+        },
+        {
+          "id": "230526-122228-birds",
+          "similarity": 0.988019
+        },
+        {
+          "id": "230526-122228-voices",
+          "similarity": 0.9852
+        },
+        {
+          "id": "230526-122228-kids-swimming",
+          "similarity": 0.983366
+        },
+        {
+          "id": "230526-125850-works-and-nature",
+          "similarity": 0.979015
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.978553
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.972106
+        }
+      ]
+    },
+    {
+      "id": "230526-122228-voices",
+      "label": "230526-122228-voices.wav",
+      "role": "accent",
+      "playbackCharacter": "event_rich",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "birds",
+        "people",
+        "water"
+      ],
+      "humanPresence": "direct",
+      "durationSeconds": 108,
+      "scores": {
+        "repair": 0.420267,
+        "automation": 0.02188,
+        "habitation": 0.604362,
+        "biodiversity": 0.315447
+      },
+      "files": [
+        {
+          "path": "audio/230526-122228-voices--event-1.wav",
+          "variant": 0,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/230526-122228-voices--event-2.wav",
+          "variant": 1,
+          "duration": 16.0
+        },
+        {
+          "path": "audio/230526-122228-voices--event-3.wav",
+          "variant": 2,
+          "duration": 16.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "230526-122228-birds",
+          "similarity": 0.995652
+        },
+        {
+          "id": "230526-122228-kids-swimming",
+          "similarity": 0.995346
+        },
+        {
+          "id": "230526-122228-kids-swimming-at-a-distance",
+          "similarity": 0.994446
+        },
+        {
+          "id": "230526-122228-helicopter",
+          "similarity": 0.994203
+        },
+        {
+          "id": "230526-125850-works-and-nature",
+          "similarity": 0.988618
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.9852
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.975214
+        },
+        {
+          "id": "388372__jamesgilsenan__machinesatwork",
+          "similarity": 0.963374
+        }
+      ]
+    },
+    {
+      "id": "230526-125850-works-and-nature",
+      "label": "230526-125850-works-and-nature.wav",
+      "role": "texture",
+      "playbackCharacter": "continuous",
+      "category": "coastal",
+      "environment": "coastal",
+      "elements": [
+        "birds",
+        "construction",
+        "people",
+        "water",
+        "wind"
+      ],
+      "humanPresence": "indirect",
+      "durationSeconds": 126,
+      "scores": {
+        "repair": 0.586479,
+        "automation": 0.079482,
+        "habitation": 0.670134,
+        "biodiversity": 0.472358
+      },
+      "files": [
+        {
+          "path": "audio/230526-125850-works-and-nature--continuous.wav",
+          "variant": 0,
+          "duration": 48.0
+        }
+      ],
+      "neighbours": [
+        {
+          "id": "230526-122228-birds",
+          "similarity": 0.99229
+        },
+        {
+          "id": "230526-122228-voices",
+          "similarity": 0.988618
+        },
+        {
+          "id": "230526-122228-helicopter",
+          "similarity": 0.986555
+        },
+        {
+          "id": "230526-122228-kids-swimming",
+          "similarity": 0.9862
+        },
+        {
+          "id": "230526-122228-kids-swimming-at-a-distance",
+          "similarity": 0.983293
+        },
+        {
+          "id": "230526-122228-monkeys",
+          "similarity": 0.979015
+        },
+        {
+          "id": "530271__hypo_mix__small-australian-birds-urban-creek",
+          "similarity": 0.971573
+        },
+        {
+          "id": "799570__klankbeeld__seaport-ambience-vlissingen-netherlands-828-am-170515_1153_1154",
+          "similarity": 0.958846
+        }
+      ]
+    }
+  ]
+}

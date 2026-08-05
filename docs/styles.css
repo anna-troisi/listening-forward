@@ -99,6 +99,44 @@ body {
   letter-spacing: 0.008em;
 }
 
+.orientation-copy {
+  position: absolute;
+  z-index: 4;
+  color: rgba(20, 18, 15, 0.97);
+  background: transparent;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  pointer-events: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+.orientation-copy strong {
+  display: block;
+  margin-bottom: 8%;
+  font-size: clamp(8px, 1.02vw, 16.5px);
+  letter-spacing: 0.045em;
+  font-weight: 700;
+}
+
+.orientation-copy span {
+  display: block;
+  font-size: clamp(7px, 0.80vw, 13px);
+  line-height: 1.43;
+}
+
+.biodiversity-copy {
+  left: 22.9%;
+  top: 44.3%;
+  width: 9.2%;
+}
+
+.habitation-copy {
+  left: 43.7%;
+  top: 75.2%;
+  width: 10.8%;
+}
+
 /* Central dial placement is based on the 1536×1024 reference image. */
 .dial-zone {
   position: absolute;
@@ -191,6 +229,28 @@ body {
   pointer-events: none;
 }
 
+.audio-status {
+  position: absolute;
+  left: 41.2%;
+  top: 71.6%;
+  width: 11.7%;
+  z-index: 4;
+  color: rgba(48, 42, 34, 0.80);
+  font-size: clamp(6px, 0.57vw, 9.5px);
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+.audio-status[data-state="playing"] {
+  color: rgba(29, 65, 47, 0.95);
+}
+
+.audio-status[data-state="error"] {
+  color: rgba(118, 39, 29, 0.96);
+}
+
 /* Rotary volume knob aligned with the lower-left physical control. */
 .volume-zone {
   position: absolute;
@@ -199,6 +259,34 @@ body {
   width: 4.2%;
   aspect-ratio: 1;
   z-index: 5;
+}
+
+.volume-scale {
+  position: absolute;
+  left: -72%;
+  top: -35%;
+  width: 244%;
+  height: 172%;
+  z-index: 0;
+  color: rgba(31, 26, 21, 0.90);
+  font-size: clamp(5px, 0.50vw, 8px);
+  line-height: 1;
+  letter-spacing: 0.055em;
+  pointer-events: none;
+}
+
+.volume-min,
+.volume-max {
+  position: absolute;
+  bottom: 0;
+}
+
+.volume-min {
+  left: 0;
+}
+
+.volume-max {
+  right: 0;
 }
 
 .volume-knob {
