@@ -84,6 +84,12 @@
     constructor() {
       this.context = null;
       this.masterGain = null;
+      this.analyser = null;
+      this.waveformCanvas = document.getElementById("soundscapeWaveform");
+      this.waveformContext = this.waveformCanvas?.getContext("2d") || null;
+      this.waveformData = null;
+      this.waveformFrame = null;
+      this.waveformVisualGain = 3.6;
       this.manifest = null;
       this.soundsById = new Map();
       this.bufferCache = new Map();
@@ -117,6 +123,8 @@
       this.random = mulberry32(this.sessionSeed);
 
       this.statusElement = document.getElementById("audioStatus");
+      this.prepareWaveformCanvas();
+      this.drawWaveform();
       this.manifestPromise = this.loadManifest();
 
       window.addEventListener("listeningforward:start", () => this.start());
@@ -126,6 +134,108 @@
       window.addEventListener("listeningforward:volume", event => {
         this.setVolume(Number(event.detail?.value ?? this.volume));
       });
+    }
+
+
+    prepareWaveformCanvas() {
+      if (!this.waveformCanvas || !this.waveformContext) return;
+
+      const rect = this.waveformCanvas.getBoundingClientRect();
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const width = Math.max(1, Math.round(rect.width * ratio));
+      const height = Math.max(1, Math.round(rect.height * ratio));
+
+      if (
+        this.waveformCanvas.width !== width
+        || this.waveformCanvas.height !== height
+      ) {
+        this.waveformCanvas.width = width;
+        this.waveformCanvas.height = height;
+      }
+    }
+
+    drawWaveform() {
+      if (!this.waveformCanvas || !this.waveformContext) return;
+
+      this.prepareWaveformCanvas();
+
+      const canvas = this.waveformCanvas;
+      const context = this.waveformContext;
+      const width = canvas.width;
+      const height = canvas.height;
+      const centre = height / 2;
+
+      context.clearRect(0, 0, width, height);
+
+      const background = context.createLinearGradient(0, 0, 0, height);
+      background.addColorStop(0, "rgba(5, 8, 10, 0.98)");
+      background.addColorStop(0.5, "rgba(11, 16, 19, 0.99)");
+      background.addColorStop(1, "rgba(3, 5, 6, 0.99)");
+      context.fillStyle = background;
+      context.fillRect(0, 0, width, height);
+
+      // A barely visible centre line gives the display a calm instrument feel.
+      context.beginPath();
+      context.moveTo(0, centre);
+      context.lineTo(width, centre);
+      context.strokeStyle = "rgba(166, 188, 200, 0.10)";
+      context.lineWidth = Math.max(1, width / 900);
+      context.stroke();
+
+      context.beginPath();
+
+      if (this.analyser && this.waveformData) {
+        this.analyser.getByteTimeDomainData(this.waveformData);
+
+        const slice = width / Math.max(1, this.waveformData.length - 1);
+
+        let peak = 0;
+
+        for (let index = 0; index < this.waveformData.length; index += 1) {
+          const value = Math.abs((this.waveformData[index] - 128) / 128);
+          if (value > peak) peak = value;
+        }
+
+        const targetVisualGain = Math.min(
+          14.0,
+          Math.max(3.0, 0.78 / Math.max(peak, 0.025))
+        );
+
+        this.waveformVisualGain +=
+          (targetVisualGain - this.waveformVisualGain) * 0.14;
+
+        for (let index = 0; index < this.waveformData.length; index += 1) {
+          const normalised = (this.waveformData[index] - 128) / 128;
+          const amplified = Math.max(
+            -0.92,
+            Math.min(0.92, normalised * this.waveformVisualGain)
+          );
+          const x = index * slice;
+          const y = centre + amplified * height * 0.485;
+
+          if (index === 0) context.moveTo(x, y);
+          else context.lineTo(x, y);
+        }
+      } else {
+        context.moveTo(0, centre);
+        context.lineTo(width, centre);
+      }
+
+      const glow = context.createLinearGradient(0, 0, width, 0);
+      glow.addColorStop(0, "rgba(178, 207, 220, 0.48)");
+      glow.addColorStop(0.5, "rgba(222, 237, 244, 0.92)");
+      glow.addColorStop(1, "rgba(178, 207, 220, 0.48)");
+
+      context.strokeStyle = glow;
+      context.lineWidth = Math.max(1.9, width / 430);
+      context.shadowColor = "rgba(191, 220, 233, 0.42)";
+      context.shadowBlur = Math.max(6, width / 68);
+      context.stroke();
+      context.shadowBlur = 0;
+
+      this.waveformFrame = window.requestAnimationFrame(
+        () => this.drawWaveform()
+      );
     }
 
     setStatus(message, state = "") {
@@ -185,7 +295,14 @@
         this.context = new AudioContextClass();
         this.masterGain = this.context.createGain();
         this.masterGain.gain.value = this.volume;
-        this.masterGain.connect(this.context.destination);
+
+        this.analyser = this.context.createAnalyser();
+        this.analyser.fftSize = 2048;
+        this.analyser.smoothingTimeConstant = 0.72;
+        this.waveformData = new Uint8Array(this.analyser.fftSize);
+
+        this.masterGain.connect(this.analyser);
+        this.analyser.connect(this.context.destination);
 
         if (this.context.state === "suspended") {
           await this.context.resume();

@@ -11,11 +11,30 @@ let dragging = false;
 
 let volumeValue = 0.72;
 let volumeDragging = false;
+let lastVolumePointerAngle = null;
+
 const VOLUME_MIN_ANGLE = -135;
 const VOLUME_MAX_ANGLE = 135;
 
+function clamp(value, minimum, maximum) {
+  return Math.min(maximum, Math.max(minimum, value));
+}
+
 function normaliseAngle(value) {
   return ((value % 360) + 360) % 360;
+}
+
+function normaliseSignedAngle(value) {
+  return ((value + 180) % 360 + 360) % 360 - 180;
+}
+
+function shortestAngularDelta(current, previous) {
+  let delta = current - previous;
+
+  if (delta > 180) delta -= 360;
+  if (delta < -180) delta += 360;
+
+  return delta;
 }
 
 function orientationBlend(degrees) {
@@ -46,7 +65,6 @@ function updateDial(nextAngle) {
       ? `${blend.left} 100%`
       : `${blend.left} ${leftPercent}% · ${blend.right} ${rightPercent}%`;
 
-  // This event is the future connection point for the live audio engine.
   window.dispatchEvent(new CustomEvent("listeningforward:tune", {
     detail: {
       angle,
@@ -58,8 +76,8 @@ function updateDial(nextAngle) {
   }));
 }
 
-function pointerAngle(event) {
-  const rect = dial.getBoundingClientRect();
+function pointerAngle(event, element) {
+  const rect = element.getBoundingClientRect();
   const centreX = rect.left + rect.width / 2;
   const centreY = rect.top + rect.height / 2;
   const deltaX = event.clientX - centreX;
@@ -68,20 +86,22 @@ function pointerAngle(event) {
   return Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
 }
 
+/* Main tuning dial: full circular motion. */
 dial.addEventListener("pointerdown", event => {
   window.dispatchEvent(new CustomEvent("listeningforward:start"));
   dragging = true;
   dial.setPointerCapture(event.pointerId);
-  updateDial(pointerAngle(event));
+  updateDial(pointerAngle(event, dial));
 });
 
 dial.addEventListener("pointermove", event => {
   if (!dragging) return;
-  updateDial(pointerAngle(event));
+  updateDial(pointerAngle(event, dial));
 });
 
 dial.addEventListener("pointerup", event => {
   dragging = false;
+
   if (dial.hasPointerCapture(event.pointerId)) {
     dial.releasePointerCapture(event.pointerId);
   }
@@ -93,6 +113,7 @@ dial.addEventListener("pointercancel", () => {
 
 dial.addEventListener("keydown", event => {
   window.dispatchEvent(new CustomEvent("listeningforward:start"));
+
   const fineStep = event.shiftKey ? 1 : 4;
 
   if (event.key === "ArrowRight" || event.key === "ArrowUp") {
@@ -111,33 +132,20 @@ dial.addEventListener("keydown", event => {
   }
 });
 
-function clamp(value, minimum, maximum) {
-  return Math.min(maximum, Math.max(minimum, value));
-}
-
+/* Volume: bounded physical sweep with genuine MIN and MAX stops. */
 function volumeAngleFromValue(value) {
   return VOLUME_MIN_ANGLE
     + clamp(value, 0, 1) * (VOLUME_MAX_ANGLE - VOLUME_MIN_ANGLE);
 }
 
-function volumeValueFromPointer(event) {
-  const rect = volumeKnob.getBoundingClientRect();
-  const centreX = rect.left + rect.width / 2;
-  const centreY = rect.top + rect.height / 2;
-  const deltaX = event.clientX - centreX;
-  const deltaY = event.clientY - centreY;
-
-  let degrees = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
-
-  if (degrees > 180) degrees -= 360;
-  degrees = clamp(degrees, VOLUME_MIN_ANGLE, VOLUME_MAX_ANGLE);
-
-  return (degrees - VOLUME_MIN_ANGLE)
+function volumeValueFromAngle(value) {
+  return (value - VOLUME_MIN_ANGLE)
     / (VOLUME_MAX_ANGLE - VOLUME_MIN_ANGLE);
 }
 
 function updateVolume(nextValue, emitEvent = true) {
   volumeValue = clamp(nextValue, 0, 1);
+
   const knobAngle = volumeAngleFromValue(volumeValue);
   const percentage = Math.round(volumeValue * 100);
 
@@ -154,17 +162,39 @@ function updateVolume(nextValue, emitEvent = true) {
 
 volumeKnob.addEventListener("pointerdown", event => {
   volumeDragging = true;
+  lastVolumePointerAngle = normaliseSignedAngle(
+    pointerAngle(event, volumeKnob)
+  );
   volumeKnob.setPointerCapture(event.pointerId);
-  updateVolume(volumeValueFromPointer(event));
 });
 
 volumeKnob.addEventListener("pointermove", event => {
-  if (!volumeDragging) return;
-  updateVolume(volumeValueFromPointer(event));
+  if (!volumeDragging || lastVolumePointerAngle === null) return;
+
+  const currentPointerAngle = normaliseSignedAngle(
+    pointerAngle(event, volumeKnob)
+  );
+
+  const delta = shortestAngularDelta(
+    currentPointerAngle,
+    lastVolumePointerAngle
+  );
+
+  const currentKnobAngle = volumeAngleFromValue(volumeValue);
+  const nextKnobAngle = clamp(
+    currentKnobAngle + delta,
+    VOLUME_MIN_ANGLE,
+    VOLUME_MAX_ANGLE
+  );
+
+  lastVolumePointerAngle = currentPointerAngle;
+  updateVolume(volumeValueFromAngle(nextKnobAngle));
 });
 
 volumeKnob.addEventListener("pointerup", event => {
   volumeDragging = false;
+  lastVolumePointerAngle = null;
+
   if (volumeKnob.hasPointerCapture(event.pointerId)) {
     volumeKnob.releasePointerCapture(event.pointerId);
   }
@@ -172,10 +202,12 @@ volumeKnob.addEventListener("pointerup", event => {
 
 volumeKnob.addEventListener("pointercancel", () => {
   volumeDragging = false;
+  lastVolumePointerAngle = null;
 });
 
 volumeKnob.addEventListener("wheel", event => {
   event.preventDefault();
+
   const direction = event.deltaY < 0 ? 1 : -1;
   updateVolume(volumeValue + direction * 0.03);
 }, { passive: false });

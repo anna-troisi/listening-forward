@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Listening Forward</title>
-  <meta name="description" content="Listening Forward — tune a possible sonic future.">
+  <meta
+    name="description"
+    content="Listening Forward — tune a possible future through close listening."
+  >
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,67 +16,59 @@
       <img
         class="instrument-image"
         src="assets/radio-reference.png"
-        alt="Listening Forward retro radio-style listening instrument"
+        alt=""
+        aria-hidden="true"
       >
-<div class="body-copy">
+
+      <div class="sr-only">
+        <h1>Listening Forward</h1>
+        <p>Tune a possible future.</p>
         <p>
-          This instrument recomposes environmental field recordings
-          through human interpretation and machine listening.
+          This instrument recomposes environmental field recordings through
+          human interpretation and machine listening.
         </p>
         <p>
-          Move the dial slowly to tune between possible sonic futures.
-          Listen for sounds that emerge, recede, overlap and return.
+          Turn the dial slowly. Listen closely to faint sounds, subtle shifts,
+          changing distances, and relations that emerge over time.
+        </p>
+        <p>
+          Attending to these details exercises the capacity to notice how
+          worlds are shaped, to imagine how they might become otherwise,
+          and to begin acting toward those possibilities.
+        </p>
+        <p>
+          Listening forward is a practice of imagining realities into being.
+          Each act of attention is part of that work.
         </p>
       </div>
 
-      <!-- Editable bottom-right system text overlays the wording baked into the image. -->
-      <div class="system-copy">
-        Human annotation and machine-derived acoustic similarity shape
-        how recordings enter, persist and recede.
-      </div>
-
-      <!-- The working radio vocabulary: Repair, Automation, Habitation, Biodiversity. -->
-      <div class="orientation-copy biodiversity-copy">
-        <strong>BIODIVERSITY</strong>
-        <span>diversity,<br>interdependence,<br>living systems</span>
-      </div>
-
-      <div class="orientation-copy habitation-copy">
-        <strong>HABITATION</strong>
-        <span>dwelling,<br>activity,<br>coexistence</span>
-      </div>
-
-      <!-- Main tuning control -->
       <div class="dial-zone">
         <button
           id="dial"
           class="dial"
           type="button"
-          aria-label="Tune between possible sonic futures"
+          aria-label="Tune between Repair, Automation, Habitation and Biodiversity"
           aria-valuemin="0"
           aria-valuemax="359"
           aria-valuenow="28"
         >
-          <span class="dial-face">
-            <span class="dial-marker"></span>
-          </span>
+          <span class="dial-face" aria-hidden="true"></span>
         </button>
       </div>
 
-      <!-- Current position readout -->
-      <div id="orientationReadout" class="orientation-readout" aria-live="polite">
+      <div
+        id="orientationReadout"
+        class="orientation-readout"
+        aria-live="polite"
+      >
         Repair 69% · Automation 31%
       </div>
-      <div id="audioStatus" class="audio-status" aria-live="polite">
+
+      <div id="audioStatus" class="sr-only" aria-live="polite">
         preparing audio
       </div>
 
-      <!-- Rotary volume control in the same position as the physical concept -->
       <div class="volume-zone">
-        <div class="volume-scale" aria-hidden="true">
-          <span class="volume-min">MIN</span>
-          <span class="volume-max">MAX</span>
-        </div>
         <button
           id="volumeKnob"
           class="volume-knob"
@@ -84,25 +79,24 @@
           aria-valuemax="100"
           aria-valuenow="72"
           aria-valuetext="72 percent"
-          title="Drag the knob, use the mouse wheel, or press the arrow keys"
+          title="Drag, use the mouse wheel, or press the arrow keys"
         >
-          <span class="volume-face">
-            <span class="volume-marker"></span>
-          </span>
+          <span class="volume-face" aria-hidden="true"></span>
         </button>
       </div>
 
-      <!-- Reserved visual-monitor area: intentionally inactive for now -->
-      <div class="monitor-zone" aria-hidden="true">
-        <div class="monitor-placeholder">
-          <span>active soundscape</span>
-          <div class="wave-placeholder"></div>
-        </div>
+      <div class="monitor-zone">
+        <canvas
+          id="soundscapeWaveform"
+          class="soundscape-waveform"
+          role="img"
+          aria-label="Live waveform of the active soundscape"
+        ></canvas>
       </div>
     </section>
 
     <p class="mobile-note">
-      Turn the central dial to begin. Move slowly and listen for sounds that enter, persist and recede.
+      Turn the central dial to begin. Move slowly and listen closely to subtle changes.
     </p>
   </main>
 
