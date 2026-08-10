@@ -115,11 +115,13 @@ body {
   pointer-events: none;
 }
 
-/* Rotary volume knob with a 270-degree physical sweep and hard stops. */
+/* Rotary volume knob with a 270-degree physical sweep and hard stops.
+   The centre matches the printed semicircular scale in radio-reference.png.
+   The scale, MIN/MAX labels and fixed shadow remain in the background image. */
 .volume-zone {
   position: absolute;
-  left: 25.000000%;
-  top: 78.639745%;
+  left: 25.298660%;
+  top: 79.300000%; /*top: 78.746015%;*/
   width: 5.263158%;
   aspect-ratio: 1;
   z-index: 6;
@@ -162,6 +164,8 @@ body {
   transform: rotate(var(--volume-angle, 59.4deg));
   transform-origin: 50% 50%;
   backface-visibility: hidden;
+  box-shadow: none;
+  filter: none;
   pointer-events: none;
 }
 

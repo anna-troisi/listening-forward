@@ -88,8 +88,10 @@
       this.waveformCanvas = document.getElementById("soundscapeWaveform");
       this.waveformContext = this.waveformCanvas?.getContext("2d") || null;
       this.waveformData = null;
+      this.waveformByteData = null;
+      this.waveformPoints = null;
       this.waveformFrame = null;
-      this.waveformVisualGain = 3.6;
+      this.waveformVisualGain = 2.4;
       this.manifest = null;
       this.soundsById = new Map();
       this.bufferCache = new Map();
@@ -174,62 +176,138 @@
       context.fillStyle = background;
       context.fillRect(0, 0, width, height);
 
-      // A barely visible centre line gives the display a calm instrument feel.
       context.beginPath();
       context.moveTo(0, centre);
       context.lineTo(width, centre);
-      context.strokeStyle = "rgba(166, 188, 200, 0.10)";
+      context.strokeStyle = "rgba(166, 188, 200, 0.08)";
       context.lineWidth = Math.max(1, width / 900);
       context.stroke();
 
-      context.beginPath();
+      const renderedPoints = [];
 
       if (this.analyser && this.waveformData) {
-        this.analyser.getByteTimeDomainData(this.waveformData);
+        if (typeof this.analyser.getFloatTimeDomainData === "function") {
+          this.analyser.getFloatTimeDomainData(this.waveformData);
+        } else {
+          this.analyser.getByteTimeDomainData(this.waveformByteData);
+          for (let index = 0; index < this.waveformByteData.length; index += 1) {
+            this.waveformData[index] =
+              (this.waveformByteData[index] - 128) / 128;
+          }
+        }
 
-        const slice = width / Math.max(1, this.waveformData.length - 1);
+        const pointCount = Math.max(
+          72,
+          Math.min(180, Math.floor(width / 3.2))
+        );
+        const samplesPerPoint = this.waveformData.length / pointCount;
+        const averaged = new Float32Array(pointCount);
+
+        for (let point = 0; point < pointCount; point += 1) {
+          const start = Math.floor(point * samplesPerPoint);
+          const end = Math.max(
+            start + 1,
+            Math.floor((point + 1) * samplesPerPoint)
+          );
+          let total = 0;
+          let count = 0;
+
+          for (
+            let sample = start;
+            sample < end && sample < this.waveformData.length;
+            sample += 1
+          ) {
+            total += this.waveformData[sample];
+            count += 1;
+          }
+
+          averaged[point] = count > 0 ? total / count : 0;
+        }
+
+        const spatiallySmoothed = new Float32Array(pointCount);
+        const weights = [1, 2, 3, 2, 1];
+
+        for (let point = 0; point < pointCount; point += 1) {
+          let weightedTotal = 0;
+
+          for (let offset = -2; offset <= 2; offset += 1) {
+            const sourceIndex = Math.max(
+              0,
+              Math.min(pointCount - 1, point + offset)
+            );
+            weightedTotal += averaged[sourceIndex] * weights[offset + 2];
+          }
+
+          spatiallySmoothed[point] = weightedTotal / 9;
+        }
 
         let peak = 0;
-
-        for (let index = 0; index < this.waveformData.length; index += 1) {
-          const value = Math.abs((this.waveformData[index] - 128) / 128);
-          if (value > peak) peak = value;
+        for (let point = 0; point < pointCount; point += 1) {
+          peak = Math.max(peak, Math.abs(spatiallySmoothed[point]));
         }
 
         const targetVisualGain = Math.min(
-          14.0,
-          Math.max(3.0, 0.78 / Math.max(peak, 0.025))
+          6.2,
+          Math.max(1.8, 0.58 / Math.max(peak, 0.045))
         );
-
         this.waveformVisualGain +=
-          (targetVisualGain - this.waveformVisualGain) * 0.14;
+          (targetVisualGain - this.waveformVisualGain) * 0.07;
 
-        for (let index = 0; index < this.waveformData.length; index += 1) {
-          const normalised = (this.waveformData[index] - 128) / 128;
-          const amplified = Math.max(
-            -0.92,
-            Math.min(0.92, normalised * this.waveformVisualGain)
+        if (!this.waveformPoints || this.waveformPoints.length !== pointCount) {
+          this.waveformPoints = new Float32Array(pointCount);
+        }
+
+        const xStep = width / Math.max(1, pointCount - 1);
+
+        for (let point = 0; point < pointCount; point += 1) {
+          const shaped = Math.tanh(
+            spatiallySmoothed[point] * this.waveformVisualGain * 1.48
           );
-          const x = index * slice;
-          const y = centre + amplified * height * 0.485;
 
-          if (index === 0) context.moveTo(x, y);
-          else context.lineTo(x, y);
+          this.waveformPoints[point] +=
+            (shaped - this.waveformPoints[point]) * 0.30;
+
+          renderedPoints.push({
+            x: point * xStep,
+            y: centre + this.waveformPoints[point] * height * 0.45
+          });
         }
       } else {
-        context.moveTo(0, centre);
-        context.lineTo(width, centre);
+        renderedPoints.push({ x: 0, y: centre });
+        renderedPoints.push({ x: width, y: centre });
       }
 
+      context.beginPath();
+      context.moveTo(renderedPoints[0].x, renderedPoints[0].y);
+
+      for (let index = 1; index < renderedPoints.length - 1; index += 1) {
+        const current = renderedPoints[index];
+        const next = renderedPoints[index + 1];
+        const midpointX = (current.x + next.x) / 2;
+        const midpointY = (current.y + next.y) / 2;
+
+        context.quadraticCurveTo(
+          current.x,
+          current.y,
+          midpointX,
+          midpointY
+        );
+      }
+
+      const last = renderedPoints[renderedPoints.length - 1];
+      context.lineTo(last.x, last.y);
+
       const glow = context.createLinearGradient(0, 0, width, 0);
-      glow.addColorStop(0, "rgba(178, 207, 220, 0.48)");
-      glow.addColorStop(0.5, "rgba(222, 237, 244, 0.92)");
-      glow.addColorStop(1, "rgba(178, 207, 220, 0.48)");
+      glow.addColorStop(0, "rgba(174, 205, 219, 0.46)");
+      glow.addColorStop(0.5, "rgba(224, 239, 246, 0.94)");
+      glow.addColorStop(1, "rgba(174, 205, 219, 0.46)");
 
       context.strokeStyle = glow;
-      context.lineWidth = Math.max(1.9, width / 430);
-      context.shadowColor = "rgba(191, 220, 233, 0.42)";
-      context.shadowBlur = Math.max(6, width / 68);
+      context.lineWidth = Math.max(1.45, width / 520);
+      context.lineCap = "round";
+      context.lineJoin = "round";
+      context.shadowColor = "rgba(191, 220, 233, 0.38)";
+      context.shadowBlur = Math.max(4, width / 86);
       context.stroke();
       context.shadowBlur = 0;
 
@@ -299,7 +377,8 @@
         this.analyser = this.context.createAnalyser();
         this.analyser.fftSize = 2048;
         this.analyser.smoothingTimeConstant = 0.72;
-        this.waveformData = new Uint8Array(this.analyser.fftSize);
+        this.waveformData = new Float32Array(this.analyser.fftSize);
+        this.waveformByteData = new Uint8Array(this.analyser.fftSize);
 
         this.masterGain.connect(this.analyser);
         this.analyser.connect(this.context.destination);
